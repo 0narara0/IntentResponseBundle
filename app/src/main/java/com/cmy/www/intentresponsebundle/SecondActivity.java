@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity  {
     TextView textViewName;
+    TextView textViewAge;
+    TextView textViewGender;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +21,13 @@ public class SecondActivity extends AppCompatActivity  {
         Bundle bundle = getIntent().getExtras();
 
         textViewName = (TextView)findViewById(R.id.textViewName);
-        TextView textViewAge = (TextView)findViewById(R.id.textViewAge);
+        textViewAge = (TextView)findViewById(R.id.textViewAge);
+        textViewGender =(TextView)findViewById(R.id.textViewGender);
+
 
         textViewName.setText("이름:  " + bundle.getString("Name","No Data"));
         textViewAge.setText("나이:  "+bundle.getString("Age","No Data"));
+        textViewGender.setText("성별:  "+bundle.getString("Gender","No Data"));
 
     }
 
@@ -30,7 +36,9 @@ public class SecondActivity extends AppCompatActivity  {
 
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
-        bundle.putString("resultValue",((TextView)textViewName).getText().toString());
+        bundle.putString("resultName",((TextView)textViewName).getText().toString());
+        bundle.putString("resultAge",((TextView)textViewAge).getText().toString());
+        bundle.putString("resultGender",((TextView)textViewAge).getText().toString());
         intent.putExtras(bundle);
         setResult(100, intent);
         super.finish();

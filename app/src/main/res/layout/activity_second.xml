@@ -36,6 +36,12 @@
             android:layout_height="wrap_content"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
         <Button
             android:id="@+id/ResultValue"
             android:layout_width="wrap_content"
@@ -43,11 +49,6 @@
             android:layout_gravity="center"
             android:text="Result Value" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
