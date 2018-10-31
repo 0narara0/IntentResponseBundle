@@ -1,11 +1,9 @@
 package com.cmy.www.intentresponsebundle;
 
-import android.app.PendingIntent;
+
 import android.content.Intent;
-import android.content.IntentSender;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity  {
@@ -38,7 +36,7 @@ public class SecondActivity extends AppCompatActivity  {
         Bundle bundle = new Bundle();
         bundle.putString("resultName",((TextView)textViewName).getText().toString());
         bundle.putString("resultAge",((TextView)textViewAge).getText().toString());
-        bundle.putString("resultGender",((TextView)textViewAge).getText().toString());
+        bundle.putString("resultGender",((TextView)textViewGender).getText().toString());
         intent.putExtras(bundle);
         setResult(100, intent);
         super.finish();

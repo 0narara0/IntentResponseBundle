@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    TextView textViewResult1, textViewResult2, textViewResult3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button = findViewById(R.id.buttonResult1);
         button.setOnClickListener(this);
+        textViewResult1 = findViewById(R.id.textViewResult1);
+        textViewResult2 = findViewById(R.id.textViewResult2);
+        textViewResult3 = findViewById(R.id.textViewResult3);
 
     }
 
@@ -49,12 +55,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data.hasExtra("resultGender")) {
-            Toast.makeText(this, data.getStringExtra("resultGender"), Toast.LENGTH_SHORT).show();
+        if(data.hasExtra("resultName")) {
+//            Toast.makeText(getApplicationContext(), data.getStringExtra("resultGender"), Toast.LENGTH_SHORT).show();
+            textViewResult1.setText(data.getStringExtra("resultName"));
+
         }
-//        if(data.hasExtra("resultAge")){
-//            Toast.makeText(this, data.getStringExtra("resultAge"), Toast.LENGTH_SHORT).show();
-//        }
+        if(data.hasExtra("resultAge")){
+//            Toast.makeText(getApplicationContext(), data.getStringExtra("resultAge"), Toast.LENGTH_SHORT).show();
+            textViewResult2.setText(data.getStringExtra("resultAge"));
+        }
+        if(data.hasExtra("resultGender")){
+            textViewResult3.setText(data.getStringExtra("resultGender"));
+//            Toast.makeText(getApplicationContext(), data.getStringExtra("resultGender"), Toast.LENGTH_LONG).show();
+        }
 
     }
 }

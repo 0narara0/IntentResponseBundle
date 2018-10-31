@@ -76,8 +76,18 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/textViewResult"
+            android:id="@+id/textViewResult1"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewResult2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewResult3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
